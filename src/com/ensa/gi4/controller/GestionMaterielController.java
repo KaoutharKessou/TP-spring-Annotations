@@ -3,12 +3,16 @@ package com.ensa.gi4.controller;
 import com.ensa.gi4.modele.Materiel;
 import com.ensa.gi4.service.api.GestionMaterielService;
 import java.util.Scanner;
-
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
+
+@Component
 public class GestionMaterielController {
 
-   @Autowired //ijection non necessaire par setter c'est une injection par membre
+   @Autowired //ijection non necessaire par setter c'est une injection par membre 
+   @Qualifier("gestionMaterielService")
     private GestionMaterielService gestionMaterielService;
     private Materiel materiel;
 

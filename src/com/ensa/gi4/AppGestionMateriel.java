@@ -12,16 +12,22 @@ import com.ensa.gi4.modele.Livre;
 
 import com.ensa.gi4.controller.GestionMaterielController;
 import java.lang.annotation.Annotation;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 
 @SuppressWarnings("all")
+@Configuration
+@ComponentScan(basePackages = "com.ensa.gi4")
 public class AppGestionMateriel {
-    private static final ApplicationContext APPLICATION_CONTEXT;
+    private static final AnnotationConfigApplicationContext APPLICATION_CONTEXT;
      //private static final XmlBeanFactory FACTORY;
 
     static { // bloc static pour initilialisation
-        APPLICATION_CONTEXT = new ClassPathXmlApplicationContext("/beans/app-context.xml");
-      
+        APPLICATION_CONTEXT = new AnnotationConfigApplicationContext(AppGestionMateriel.class);
+                
+        //new ClassPathXmlApplicationContext("/beans/app-context.xml");
        // ClassPathXmlApplicationContext("beans/*-app-context.xml/") : si je veux inserer tous les implementations; 
         //FACTORY = new XmlBeanFactory (new ClassPathResource("/beans/dao-context.xml"));
     }

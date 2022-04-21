@@ -17,7 +17,7 @@ import org.springframework.context.ApplicationEventPublisherAware;
 import org.springframework.stereotype.Component;
 
 
-@Component
+@Component("gestionMaterielService")
 public class GestionMaterielServiceImpl implements GestionMaterielService {
     
  // bd goes here
@@ -27,7 +27,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
     private GestionChaiseService ChaiseService ;
     
 
-
+   /*@Autowired 
     public GestionMaterielServiceImpl(@Qualifier("materielDAO") MaterielDAO dao){
         this.dao = dao;
     }
@@ -36,7 +36,7 @@ public class GestionMaterielServiceImpl implements GestionMaterielService {
     }
     public void setGestionChaiseService(GestionChaiseService ChaiseService) {
         this.ChaiseService = ChaiseService;
-    }
+    }*/
     
     @Override
     public void init() {
